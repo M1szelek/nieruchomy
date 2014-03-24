@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @offer.title %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @offer.type %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= @offer.photo %>
+</p>
+
+<p>
+  <strong>Street:</strong>
+  <%= @offer.street %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @offer.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @offer.state %>
+</p>
+
+<p>
+  <strong>Metrage:</strong>
+  <%= @offer.metrage %>
+</p>
+
+<p>
+  <strong>Roomcount:</strong>
+  <%= @offer.roomcount %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @offer.price %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @offer.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_offer_path(@offer) %> |
+<%= link_to 'Back', offers_path %>
