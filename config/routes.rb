@@ -1,6 +1,10 @@
 Nieruchomy::Application.routes.draw do
-  get "static_pages/home"
-  get "static_pages/help"
+  get "users/new"
+	
+  root	'static_pages#home'
+  #match '/home', to: 'static_pages#home', via: 'get'
+  match	'/help',	to: 'static_pages#help',	via: 'get'
+  match '/signup',	to: 'users#new',	 	via: 'get'
   
 
   resources :offers

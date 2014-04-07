@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Nieruchomy</title>
+<title>Nieruchomy</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -14,12 +14,11 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="navbar-inner">
         <div class="container">
-          <%= link_to "Nieruchomy.pl", '/static_pages/home#', id: "logo" %>
+          <%= link_to "Nieruchomy.pl", root_path, id: "logo" %>
           <nav>
             <ul class="nav pull-right">
-              <li><%= link_to "Home",    '/static_pages/home#' %></li>
-              <li><%= link_to "Pomoc",    '/static_pages/help#' %></li>
-              <li><%= link_to "Rejestracja", '/users#' %></li>
+              <li><%= link_to "Pomoc",    help_path %></li>
+              <li><%= link_to "Rejestracja", signup_path %></li>
             </ul>
           </nav>
         </div>
