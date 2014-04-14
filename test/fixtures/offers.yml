@@ -1,25 +1,27 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  type: 
-  photo: MyString
-  street: MyString
-  city: MyString
-  state: MyString
-  metrage: 1.5
-  roomcount: 1
-  price: 1
+  title: 
+  description: 
+  typeM: 
+  photo: 
+  street: 
+  city: 
+  state: 
+  metrage: 
+  roomcount: 
+  price: 
   user_id: 1
 
 two:
-  title: MyString
-  type: 
-  photo: MyString
-  street: MyString
-  city: MyString
-  state: MyString
-  metrage: 1.5
-  roomcount: 1
-  price: 1
+  title: 
+  description: 
+  typeM: 
+  photo: 
+  street: 
+  city: 
+  state: 
+  metrage: 
+  roomcount: 
+  price: 
   user_id: 1

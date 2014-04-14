@@ -1,3 +1,42 @@
 // Place all the styles related to the Offers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.tytul {
+    color: #000000;
+    font-family: Impact;
+    font-size: 50px;
+    margin: 10px 0 0 10px;
+}
+.podtytul {
+    color: #FF0000;
+    font-family: Impact;
+    font-size: 20px;
+    margin: 0 0 0 10px;
+}
+.offer {
+    border: 1px solid #9A2EFE;
+    clear: both;
+    display: block;
+    margin: 10px;
+    width: 800px;
+}
+.offertitle {
+    font-size: 30px;
+    list-style-position: outside;
+    margin: 0 0 0 10px;
+}
+.offercontent {
+    font-size: 20px;
+    margin: 0 0 0 10px;
+    width: 850px;
+}
+.offerphoto {
+    float: left;
+    margin: 0 0 0 10px;
+}
+.offerdetails {
+    background: none repeat scroll 0 0 #EEEEEE;
+    height: 150px;
+    margin: 0 0 0 350px;
+    width: 300px;
+}
