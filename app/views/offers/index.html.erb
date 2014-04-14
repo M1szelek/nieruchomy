@@ -11,23 +11,33 @@
     <% @offers.each do |offer| %>
   
       <tr>
+      	
       	<div class="offer">
-       <div class="offertitle"> <%= offer.title %></div>
-        <%= offer.description %>
-        <%= offer.typeM %>
-        <div class="offerphoto"><%= offer.photo %></div>
+       <div class="offertitle"><br /> <%= offer.title %><br /> </div>
+      
+       
+       <div class="offerphoto">
+       	<!--<%= offer.photo %> -->
+       	</br>
+       	
+       	<%= image_tag "home.jpg" %>
+       	</br>
+       </div>
         
         <div class="offerdetails">
         	
 		
 		<b>Cena:</b>
 		<%= offer.price %> zł
-		<br />	
+		<br />
+		<b>Typ:</b>
+		 <%= offer.typeM %>
+		<br />		
 		<b>Liczba pokoi:</b>
 		<%= offer.roomcount %>
 		<br />	
-		<b>Metrarz:</b>
-		<%= offer.metrage %>
+		<b>Metraż:</b>
+		<%= offer.metrage %> m^2
 		<br />
 		<b>Województwo:</b>
 		<%= offer.state %>
@@ -42,7 +52,11 @@
 		<%= offer.user_id %>
 		<br />
 			</div>
-        
+        <div class="offerD">
+        	<b>Opis:</b>
+        	<br />
+        	  <%= offer.description %>
+        </div>
         
        
         <div class="offercontent">

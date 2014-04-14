@@ -5,7 +5,7 @@
     color: #000000;
     font-family: Impact;
     font-size: 50px;
-    margin: 10px 0 0 10px;
+    margin: 0 0 0 0;
 }
 .podtytul {
     color: #FF0000;
@@ -20,23 +20,32 @@
     margin: 10px;
     width: 800px;
 }
+.offerD {
+   
+    clear: both;
+    display: block;
+    margin: 0 0 0 10px;
+    width: 780px;
+}
 .offertitle {
     font-size: 30px;
     list-style-position: outside;
     margin: 0 0 0 10px;
 }
 .offercontent {
-    font-size: 20px;
+    font-size: 10px;
     margin: 0 0 0 10px;
     width: 850px;
 }
 .offerphoto {
     float: left;
     margin: 0 0 0 10px;
+    height: 120px;
+     width: 120px;
 }
 .offerdetails {
     background: none repeat scroll 0 0 #EEEEEE;
-    height: 150px;
+    height: 160px;
     margin: 0 0 0 350px;
-    width: 300px;
+    width: 250px;
 }
