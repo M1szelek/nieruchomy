@@ -18,7 +18,7 @@ class OffersControllerTest < ActionController::TestCase
 
   test "should create offer" do
     assert_difference('Offer.count') do
-      post :create, offer: { city: @offer.city, metrage: @offer.metrage, photo: @offer.photo, price: @offer.price, roomcount: @offer.roomcount, state: @offer.state, street: @offer.street, title: @offer.title, type: @offer.type, user_id: @offer.user_id }
+      post :create, offer: { city: @offer.city, description: @offer.description, metrage: @offer.metrage, photo: @offer.photo, price: @offer.price, roomcount: @offer.roomcount, state: @offer.state, street: @offer.street, title: @offer.title, typeM: @offer.typeM, user_id: @offer.user_id }
     end
 
     assert_redirected_to offer_path(assigns(:offer))
@@ -35,7 +35,7 @@ class OffersControllerTest < ActionController::TestCase
   end
 
   test "should update offer" do
-    patch :update, id: @offer, offer: { city: @offer.city, metrage: @offer.metrage, photo: @offer.photo, price: @offer.price, roomcount: @offer.roomcount, state: @offer.state, street: @offer.street, title: @offer.title, type: @offer.type, user_id: @offer.user_id }
+    patch :update, id: @offer, offer: { city: @offer.city, description: @offer.description, metrage: @offer.metrage, photo: @offer.photo, price: @offer.price, roomcount: @offer.roomcount, state: @offer.state, street: @offer.street, title: @offer.title, typeM: @offer.typeM, user_id: @offer.user_id }
     assert_redirected_to offer_path(assigns(:offer))
   end
 
