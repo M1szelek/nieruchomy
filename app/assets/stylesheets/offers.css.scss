@@ -14,7 +14,9 @@
     margin: 0 0 0 10px;
 }
 .offer {
-    border: 1px solid #9A2EFE;
+    
+    background-color: #EEEEEE;
+    border-radius: 6px;
     clear: both;
     display: block;
     margin: 10px;
@@ -45,6 +47,7 @@
 }
 .offerdetails {
     background: none repeat scroll 0 0 #EEEEEE;
+   
     height: 160px;
     margin: 0 0 0 350px;
     width: 250px;

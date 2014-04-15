@@ -1,5 +1,68 @@
-<h1>New offer</h1>
+<h1>Dodaj ofertę </h1>
 
-<%= render 'form' %>
+<div class="row">
+  <div class="span6 offset3">
+  	
+    <%= form_for(@offer) do |f| %>
 
-<%= link_to 'Back', offers_path %>
+       Tytuł :
+       </br>
+    <%= f.text_field :title %>
+    </br>
+    
+    Opis :
+    </br>
+    <%= f.text_area :description %>
+    
+      </br>
+    Rodzaj nieruchomości:
+    <br />
+    <%= f.text_field :typeM %>
+
+      </br>
+      Zdjęcie:
+      </br>
+      
+    <%= f.text_field :photo %> <%= f.submit "Dodaj zdjęcie", class: "btn btn-small btn-primary" %>
+    
+    </br>
+	Ulica :
+	</br>
+    <%= f.text_field :street %>
+    </br>
+    
+     Miasto:
+     </br>
+    <%= f.text_field :city %>
+    </br>
+
+       Województwo:
+       </br>
+    <%= f.text_field :state %>
+    </br>
+    
+   Metraż:
+   </br>
+    <%= f.text_field :metrage %>
+    </br>
+      
+   Liczba pokoi:
+   </br>
+    <%= f.text_field :roomcount %>
+    </br>
+    
+    Cena :
+    </br>
+    <%= f.text_field :price %>
+    </br>
+    
+     Użytkownik :
+    </br>
+    <%= f.number_field :user_id %>
+      </br></br>
+
+      <%= f.submit "Dodaj ofertę", class: "btn btn-large btn-primary" %>
+    <% end %>
+    	
+  </div>
+</div>
