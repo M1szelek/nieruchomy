@@ -14,6 +14,7 @@
     </tr>
   </thead>
 
+<%= will_paginate %>
   <tbody>
     <% @users.each do |user| %>
       <tr>
@@ -24,11 +25,15 @@
         <td><%= user.phone %></td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if current_user.admin? && !current_user?(user) %>
+          <td><%= link_to "delete", user, method: :delete, data: { confirm: "You sure?" } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<%= will_paginate %>
 
 <br>
 
