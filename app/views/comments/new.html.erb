@@ -1,5 +1,16 @@
-<h1>New comment</h1>
+<h1>Nowy Komentarz</h1>
 
-<%= render 'form' %>
+<div class="row">
+  <div class="span6 offset3">
+  	<%= form_for(@comment) do |f| %>
+  	 Treść komentarza:
+  	 </br>
+    <%= f.text_area :content %>
+    <br />
+     <%= f.submit "Dodaj komantarz", class: "btn btn-small btn-primary" %>
+  	 <% end %>
+  	
+  	</div>
+  	</div>
 
-<%= link_to 'Back', comments_path %>
+

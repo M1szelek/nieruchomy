@@ -1,5 +1,6 @@
 class OffersController < ApplicationController
   before_action :set_offer, only: [:show, :edit, :update, :destroy]
+ 
 
   # GET /offers
   # GET /offers.json
@@ -7,9 +8,12 @@ class OffersController < ApplicationController
     @offers = Offer.all
   end
 
+
   # GET /offers/1
   # GET /offers/1.json
   def show
+    @post = Comment.all(:order => "created_at DESC")
+    
   end
 
   # GET /offers/new

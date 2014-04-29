@@ -47,13 +47,20 @@
         </div>
         
      
-        
-      
-       
          </div>
-         
+        <b>Komentarze:</b> </br>
          <div class="offer">
-         	commm
+         	<% @post.each do |post| %>
+         	<b>Od: <%= post.user_id  %></b>
+         	<br>
+         	<i><%= post.content %></i>
+         	</br>
+         	</br>
+         	<% end %>
+  <%= link_to 'Dodaj komentarz', new_comment_path %>
+  
+  	
+  	
          	</div>
 
 <%= link_to 'Edit', edit_offer_path(@offer) %> |
