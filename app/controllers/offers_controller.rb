@@ -15,7 +15,9 @@ class OffersController < ApplicationController
     @post = Comment.all(:order => "created_at DESC")
     
   end
-
+ def index
+    @offers = Offer.paginate(page: params[:page])
+  end
   # GET /offers/new
   def new
     @offer = Offer.new

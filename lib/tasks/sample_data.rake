@@ -21,5 +21,15 @@ namespace :db do
                    password: password,
                    password_confirmation: password)
     end
+    
+     99.times do |n|
+      title  = Faker::Name.name
+      description  = Faker::Name.name
+      photo = "123456789"
+    
+      street=Faker::Address.street_name
+      Offer.create!(title: title, description: description ,photo: photo, street: street )
+    end
+    
   end
 end
