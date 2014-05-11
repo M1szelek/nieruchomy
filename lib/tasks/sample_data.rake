@@ -21,7 +21,6 @@ namespace :db do
                    password: password,
                    password_confirmation: password)
     end
-<<<<<<< HEAD
 
     users = User.all(limit: 6)
     50.times do |n|
@@ -33,7 +32,6 @@ namespace :db do
       users.each { |user| user.offers.create!(title: title, description: content, typeM: typeM,
         photo: "", street: street, state: state, metrage: 50, roomcount: 4, price: 100000) }
     end
-=======
     
      99.times do |n|
       title  = Faker::Name.name
@@ -43,7 +41,5 @@ namespace :db do
       street=Faker::Address.street_name
       Offer.create!(title: title, description: description ,photo: photo, street: street )
     end
-    
->>>>>>> 512fb8f1988fadf46a7a9d668b84a6e62a0de348
   end
 end
