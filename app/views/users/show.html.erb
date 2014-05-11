@@ -1,3 +1,4 @@
+<% provide(:title, @user.name) %>
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -27,3 +28,13 @@
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+
+<div class="span8">
+    <% if @user.offers.any? %>
+      <h3>Offers (<%= @user.offers.count %>)</h3>
+      <ol class="offers">
+        <%= render @offers %>
+      </ol>
+      <%= will_paginate @offers %>
+    <% end %>
+  </div>

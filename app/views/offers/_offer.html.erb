@@ -1,19 +1,6 @@
-
-
-<table>
-  
-  
-  
-  
-
-  <tbody>
-  	  
-    <% @offers.each do |offer| %>
-  
-      <tr>
-      	
-      	<div class="offer">
-       <div class="offertitle"><br /> <%= link_to offer.title, offer %><br /> </div>
+<li>
+  <div class="offer">
+       <div class="offertitle"><br /> <%= offer.title %><br /> </div>
       
        
        <div class="offerphoto">
@@ -48,7 +35,7 @@
 		<b>Ulica:</b>
 		<%= offer.street %>
 		<br />
-		<b>Użytkownik</b>
+		<b>Uużytkownik</b>
 		<%= offer.user_id %>
 		<br />
 			</div>
@@ -58,26 +45,9 @@
         	  <%= offer.description %>
         </div>
         
-       
-        <div class="offercontent">
-        	<%= link_to 'Show', offer %>
-        	
-        	<%= link_to 'Edit', edit_offer_path(offer) %>
-        	
-        	<%= link_to 'Destroy', offer, method: :delete, data: { confirm: 'Jesteś pewien?' } %>
-        	
-        </div>
-        
-      
-       
-         </div>
-      </tr>
-      
-    <% end %>
-   
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Offer', new_offer_path %>
+     
+    </div>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(offer.created_at) %> ago.
+  </span>
+</li>
