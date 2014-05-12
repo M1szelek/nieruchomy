@@ -14,6 +14,9 @@ class OffersController < ApplicationController
   def show
     @post = Comment.all(:order => "created_at DESC")
     
+    
+    
+    
   end
  def index
     @offers = Offer.paginate(page: params[:page])
