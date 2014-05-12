@@ -1,6 +1,6 @@
 <li>
   <div class="offer">
-       <div class="offertitle"><br /> <%= offer.title %><br /> </div>
+       <div class="offertitle"><br /> <%= link_to offer.title, offer %><br /> </div>
       
        
        <div class="offerphoto">
@@ -35,7 +35,7 @@
 		<b>Ulica:</b>
 		<%= offer.street %>
 		<br />
-		<b>Uużytkownik</b>
+		<b>Użytkownik</b>
 		<%= offer.user_id %>
 		<br />
 			</div>
@@ -44,10 +44,20 @@
         	<br />
         	  <%= offer.description %>
         </div>
-        
+        <div class="offercontent">
+        	<%= link_to 'Show', offer %>
+        	
+        	<%= link_to 'Edit', edit_offer_path(offer) %>
+        	
+        	<%= link_to 'Destroy', offer, method: :delete, data: { confirm: 'Jesteś pewien?' } %>
+        	
+        </br>
+        <span class="timestamp">
+    Dodane <%= time_ago_in_words(offer.created_at) %> temu.
+  </span>
+        	
+        </div>
      
     </div>
-  <span class="timestamp">
-    Posted <%= time_ago_in_words(offer.created_at) %> ago.
-  </span>
+  
 </li>

@@ -12,9 +12,9 @@ class OffersController < ApplicationController
   # GET /offers/1
   # GET /offers/1.json
   def show
-    @post = Comment.all(:order => "created_at DESC")
-    
-    
+    @offer = Offer.find(params[:id])
+    @comments = @offer.comments
+    @comment_add=Comment.new
     
     
   end

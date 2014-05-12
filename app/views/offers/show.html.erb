@@ -50,18 +50,38 @@
          </div>
         <b>Komentarze:</b> </br>
          <div class="offer">
-         	<% @post.each do |post| %>
-         	<b>Od: <%= post.user_id  %></b>
+         	<% @comments.each do |comment| %>
+         	
+         	<b>Od: <%= comment.user_id  %></b>
          	<br>
-         	<i><%= post.content %></i>
+         	<i><%= comment.content %></i>
          	</br>
          	</br>
          	<% end %>
-  <%= link_to 'Dodaj komentarz', new_comment_path %>
+  			
+  </div>
   
+ 
+  
+  	<%= hidden_field_tag :user_id, current_user.id %>
   	
+  	<%= form_for(@comment_add) do |f| %>
   	
-         	</div>
+  	 <b>Treść komentarza:</b>
+  	 </br>
+  	 </br>
+  	 <%= f.hidden_field :offer_id, :value => params[:id] %>
+  	
+    <%= f.text_area :content %>
+    <br />
+     <%= f.submit "Dodaj komantarz", class: "btn btn-small btn-primary" %>
+  	 <% end %>
+  	
+  </div>
+  	
+</div>
+</div>
 
 <%= link_to 'Edit', edit_offer_path(@offer) %> |
 <%= link_to 'Back', offers_path %>
+

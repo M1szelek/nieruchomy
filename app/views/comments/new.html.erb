@@ -2,7 +2,9 @@
 
 <div class="row">
   <div class="span6 offset3">
+  	<%= hidden_field_tag :user_id, current_user.id %>
   	<%= form_for(@comment) do |f| %>
+  	
   	 Treść komentarza:
   	 </br>
     <%= f.text_area :content %>
