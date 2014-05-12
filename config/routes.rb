@@ -17,7 +17,7 @@ Nieruchomy::Application.routes.draw do
   match '/oferty',  to: 'offers#index',    via: 'get'
 
 
-  resources :offers
+  resources :offers, only: [:create, :destroy]
 
   resources :comments
 

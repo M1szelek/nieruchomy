@@ -17,24 +17,9 @@
 </p>
 
 <p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
-
-<p>
   <strong>Phone:</strong>
   <%= @user.phone %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
-
-<div class="span8">
-    <% if @user.offers.any? %>
-      <h3>Offers (<%= @user.offers.count %>)</h3>
-      <ol class="offers">
-        <%= render @offers %>
-      </ol>
-      <%= will_paginate @offers %>
-    <% end %>
-  </div>

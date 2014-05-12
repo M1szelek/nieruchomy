@@ -1,5 +1,7 @@
 class OffersController < ApplicationController
   before_action :set_offer, only: [:show, :edit, :update, :destroy]
+  before_action :signed_in_user, only: [:create, :destroy]
+  before_action :correct_user,   only: :destroy
  
 
   # GET /offers
@@ -30,16 +32,13 @@ class OffersController < ApplicationController
   # POST /offers
   # POST /offers.json
   def create
-    @offer = Offer.new(offer_params)
-
-    respond_to do |format|
-      if @offer.save
-        format.html { redirect_to @offer, notice: 'Offer was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @offer }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @offer.errors, status: :unprocessable_entity }
-      end
+    @offer = current_user.offers.build(offer_params)
+    if @offer.save
+      flash[:success] = "Offer created!"
+      redirect_to root_url
+    else
+      @feed_items = []
+      render 'static_pages/home'
     end
   end
 
@@ -61,10 +60,7 @@ class OffersController < ApplicationController
   # DELETE /offers/1.json
   def destroy
     @offer.destroy
-    respond_to do |format|
-      format.html { redirect_to offers_url }
-      format.json { head :no_content }
-    end
+    redirect_to root_url
   end
 
   private
@@ -75,6 +71,11 @@ class OffersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def offer_params
-      params.require(:offer).permit(:title, :description, :typeM, :photo, :street, :city, :state, :metrage, :roomcount, :price, :user_id)
+      params.require(:offer).permit(:title, :description, :typeM, :photo, :street, :city, :state, :metrage, :roomcount, :price)
+    end
+
+    def correct_user
+      @offer = current_user.offers.find_by(id: params[:id])
+      redirect_to root_url if @offer.nil?
     end
 end
