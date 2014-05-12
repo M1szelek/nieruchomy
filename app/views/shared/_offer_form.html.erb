@@ -1,0 +1,44 @@
+<%= form_for(@offer) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    Tytuł<br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    Opis<br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    Rodzaj<br>
+    <%= f.text_field :typeM %>
+  </div>
+  <div class="field">
+    Photo<br>
+    <%= f.text_field :photo %>
+  </div>
+  <div class="field">
+    Ulica<br>
+    <%= f.text_field :street %>
+  </div>
+  <div class="field">
+    Miasto<br>
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    Województwo<br>
+    <%= f.text_field :state %>
+  </div>
+  <div class="field">
+    Metraż<br>
+    <%= f.text_field :metrage %>
+  </div>
+  <div class="field">
+    Ilość pokoi<br>
+    <%= f.text_field :roomcount %>
+  </div>
+  <div class="field">
+    Cena<br>
+    <%= f.text_field :price %>
+  </div>
+  <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+<% end %>

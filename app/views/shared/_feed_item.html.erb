@@ -1,0 +1,49 @@
+<li id="<%= feed_item.id %>">
+  <span class="user">
+    <%= link_to feed_item.user.name, feed_item.user %>
+  </span>
+  <div class="offer">
+       <div class="offertitle"><br /> <%= feed_item.title %><br /> </div>
+      
+       
+       <div class="offerphoto">
+       	<!--<%= @offer.photo %> -->
+       	</br>
+       	
+       	<%= image_tag "home.jpg" %>
+       	</br>
+       </div>
+        
+        <div class="offerdetails">
+        	
+		
+		<b>Cena:</b>
+		<%= feed_item.price %> zł
+		<br />
+		<b>Typ:</b>
+		 <%= feed_item.typeM %>
+		<br />		
+		<b>Liczba pokoi:</b>
+		<%= feed_item.roomcount %>
+		<br />	
+		<b>Metraż:</b>
+		<%= feed_item.metrage %> m^2
+		<br />
+		<b>Województwo:</b>
+		<%= feed_item.state %>
+			<br />	
+		<b>Miasto:</b>
+		<%= feed_item.city %>
+			<br />	
+		<b>Ulica:</b>
+		<%= feed_item.street %>
+		<br />
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
+  </span>
+  <% if current_user?(feed_item.user) %>
+    <%= link_to "delete", feed_item, method: :delete,
+                                     data: { confirm: "You sure?" },
+                                     title: feed_item.title %>
+  <% end %>
+</li>
