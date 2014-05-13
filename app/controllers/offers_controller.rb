@@ -19,6 +19,7 @@ class OffersController < ApplicationController
     @comment_add=Comment.new
     
     
+    
   end
  def index
     @offers = Offer.paginate(page: params[:page])
