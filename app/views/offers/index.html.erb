@@ -58,15 +58,14 @@
         	  <%= offer.description %>
         </div>
         
-       
-        <div class="offercontent">
-        	<%= link_to 'Show', offer %>
+      <div class="offercontent">
         	
-        	<%= link_to 'Edit', edit_offer_path(offer) %>
-        	
-        	<%= link_to 'Destroy', offer, method: :delete, data: { confirm: 'Jesteś pewien?' } %>
+        <span class="timestamp">
+    Dodane <%= time_ago_in_words(offer.created_at) %> temu.
+  </span>
         	
         </div>
+       
         
       
        
