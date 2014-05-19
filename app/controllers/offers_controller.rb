@@ -65,7 +65,7 @@ class OffersController < ApplicationController
   # DELETE /offers/1.json
   def destroy
     @offer.destroy
-    redirect_to root_url
+    redirect_to :back
   end
 
   private

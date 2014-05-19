@@ -49,27 +49,20 @@
 		<%= offer.street %>
 		<br />
 		<b>Użytkownik</b>
-		<%= offer.user_id %>
+		<%= offer.user.name %>
 		<br />
-			</div>
-        <div class="offerD">
-        	<b>Opis:</b>
-        	<br />
-        	  <%= offer.description %>
-        </div>
-        
-      <div class="offercontent">
-        	
-        <span class="timestamp">
+		   <span class="timestamp">
     Dodane <%= time_ago_in_words(offer.created_at) %> temu.
+    	  <% if current_user?(offer.user) %>
+   <b> <%= link_to 'Usuń', offer, method: :delete, data: { confirm: 'Jesteś tego pewny?' } %></b>
+  <% end %>
   </span>
-        	
+		<br/>
+		
         </div>
-       
-        
       
        
-         </div>
+      
       </tr>
       
     <% end %>

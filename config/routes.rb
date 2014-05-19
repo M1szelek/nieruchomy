@@ -13,6 +13,7 @@ Nieruchomy::Application.routes.draw do
   
 
   match	'/help',	to: 'static_pages#help',	via: 'get'
+  match  '/add', to: 'static_pages#add',  via: 'get'
   match '/signup',	to: 'users#new',	 	via: 'get'
   match '/oferty',  to: 'offers#index',    via: 'get'
 
