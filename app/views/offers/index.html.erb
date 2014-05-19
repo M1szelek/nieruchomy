@@ -55,8 +55,10 @@
 		<br />
 		   <span class="timestamp">
     Dodane <%= time_ago_in_words(offer.created_at) %> temu.
-    	  <% if current_user?(offer.user) || current_user.admin?  %>
-   <b> <%= link_to 'Usuń', offer, method: :delete, data: { confirm: 'Jesteś tego pewny?' } %></b>
+    <% if current_user %>
+        <% if current_user?(offer.user) || current_user.admin? %>
+          <b> <%= link_to 'Usuń', offer, method: :delete, data: { confirm: 'Jesteś tego pewny?' } %></b>
+      <% end %>
   <% end %>
   </span>
 		<br/>
