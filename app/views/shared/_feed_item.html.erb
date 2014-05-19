@@ -1,7 +1,4 @@
 <li id="<%= feed_item.id %>">
-  <span class="user">
-    <%= link_to feed_item.user.name, feed_item.user %>
-  </span>
   <div class="offer">
        <div class="offertitle"><br /> <%= link_to  feed_item.title, feed_item %><br /> </div>       
        <div class="offerphoto">
@@ -35,6 +32,9 @@
 			<br />	
 		<b>Ulica:</b>
 		<%= feed_item.street %>
+		<br />
+		<b>Użytkownik</b>
+		<%= feed_item.user.name %>
 		<br />
   <span class="timestamp">
     Posted <%= time_ago_in_words(feed_item.created_at) %> ago.

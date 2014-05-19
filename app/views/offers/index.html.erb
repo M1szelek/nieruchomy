@@ -1,4 +1,6 @@
-
+<h1>
+  Oferty w naszym serwisie
+</h1>
 <%= will_paginate %>
 <table>
   
@@ -53,7 +55,7 @@
 		<br />
 		   <span class="timestamp">
     Dodane <%= time_ago_in_words(offer.created_at) %> temu.
-    	  <% if current_user?(offer.user) %>
+    	  <% if current_user?(offer.user) || current_user.admin?  %>
    <b> <%= link_to 'Usuń', offer, method: :delete, data: { confirm: 'Jesteś tego pewny?' } %></b>
   <% end %>
   </span>

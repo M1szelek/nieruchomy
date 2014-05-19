@@ -10,12 +10,14 @@ Nieruchomy::Application.routes.draw do
   match '/signup',	 to: 'users#new',	 	         via: 'get'
   match '/signin',   to: 'sessions#new',         via: 'get'
   match '/signout',  to: 'sessions#destroy',     via: 'delete'
+
   
 
   match	'/help',	to: 'static_pages#help',	via: 'get'
   match  '/add', to: 'static_pages#add',  via: 'get'
   match '/signup',	to: 'users#new',	 	via: 'get'
   match '/oferty',  to: 'offers#index',    via: 'get'
+  match '/users',    to: 'users#index',   via: 'get'
 
 
   resources :offers, only: [:create, :destroy]

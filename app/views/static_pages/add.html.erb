@@ -1,16 +1,11 @@
 <% if signed_in? %>
+
   <div class="row">
-    <aside class="span8">
-      <section>
-        <%= render 'shared/user_info' %>
-      </section>
+    <div class="span6 offset3">
+      <h1>Dodaj ofertę</h1>
       <section>
         <%= render 'shared/offer_form' %>
       </section>
-    <div class="span4">
-      <h3>Offer Feed</h3>
-      <%= render 'shared/feed' %>
-    </div>
     </aside>
   </div>
 <% end %>
