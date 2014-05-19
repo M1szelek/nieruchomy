@@ -49,17 +49,28 @@
      
          </div>
         <b>Komentarze:</b> </br>
-         <div class="offer">
+        
          	<% @comments.each do |comment| %>
+         	<div class="offer">
+         	<i><b>Od: <%= comment.user.name  %></b></i>
+        
          	
-         	<b>Od: <%= comment.user_id  %></b>
          	<br>
          	<i><%= comment.content %></i>
          	</br>
          	</br>
+         	   <div class="timecomment">
+    Dodane <%= time_ago_in_words(comment.created_at) %> temu.
+    
+     	  <% if current_user?(comment.user) %>
+   <b> <%= link_to 'Usuń', comment, method: :delete, data: { confirm: 'Jesteś tego pewny?' } %></b>
+  <% end %>
+  </div>
+         	</div>
+         	</br>
          	<% end %>
   			
-  </div>
+
   
  
   <% if signed_in? %>

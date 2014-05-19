@@ -16,6 +16,7 @@ class OffersController < ApplicationController
   def show
     @offer = Offer.find(params[:id])
     @comments = @offer.comments
+    
     @comment_add=Comment.new
     
     
