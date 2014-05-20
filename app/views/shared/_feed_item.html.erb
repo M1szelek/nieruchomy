@@ -40,6 +40,7 @@
     Dodane <%= time_ago_in_words(feed_item.created_at) %> temu.
   </span>
   <% if current_user?(feed_item.user) %>
+  	<b><%= link_to 'Edit', edit_offer_path(feed_item) %></b>
     <%= link_to "Usuń", feed_item, method: :delete,
                                      data: { confirm: "Jesteś tego pewien?" },
                                      title: feed_item.title %>
