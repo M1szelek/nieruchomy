@@ -61,9 +61,10 @@
          	</br>
          	   <div class="timecomment">
     Dodane <%= time_ago_in_words(comment.created_at) %> temu.
-    
+    <% if current_user %>
      	  <% if current_user?(comment.user) || current_user.admin?  %>
    <b> <%= link_to 'Usuń', comment, method: :delete, data: { confirm: 'Jesteś tego pewny?' } %></b>
+  <% end %>
   <% end %>
   </div>
          	</div>
