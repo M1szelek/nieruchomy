@@ -32,14 +32,5 @@ namespace :db do
       users.each { |user| user.offers.create!(title: title, description: content, typeM: typeM,
         photo: "", street: street, state: state, metrage: 50, roomcount: 4, price: 100000) }
     end
-    
-     99.times do |n|
-      title  = Faker::Name.name
-      description  = Faker::Name.name
-      photo = "123456789"
-    
-      street=Faker::Address.street_name
-      Offer.create!(title: title, description: description ,photo: photo, street: street )
-    end
   end
 end

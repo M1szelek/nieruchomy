@@ -30,15 +30,15 @@
   </div>
   <div class="field">
     Metraż<br>
-    <%= f.text_field :metrage %>
+    <%= f.number_field :metrage %>
   </div>
   <div class="field">
     Ilość pokoi<br>
-    <%= f.text_field :roomcount %>
+    <%= f.number_field :roomcount %>
   </div>
   <div class="field">
     Cena<br>
-    <%= f.text_field :price %>
+    <%= f.number_field :price %>
   </div>
   <%= f.submit "Dodaj", class: "btn btn-large btn-primary" %>
 <% end %>

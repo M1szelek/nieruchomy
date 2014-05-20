@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140427202514) do
+ActiveRecord::Schema.define(version: 20140520192914) do
 
   create_table "comments", force: true do |t|
     t.string   "content"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20140427202514) do
     t.string   "street"
     t.string   "city"
     t.string   "state"
-    t.string   "metrage"
+    t.integer  "metrage",     limit: 255
     t.integer  "roomcount"
     t.integer  "price"
     t.integer  "user_id"
