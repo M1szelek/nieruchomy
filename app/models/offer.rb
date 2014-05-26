@@ -8,4 +8,7 @@ class Offer < ActiveRecord::Base
   	validates :metrage, presence: true, numericality: { only_integer: true }
   	validates :roomcount, presence: true, numericality: { only_integer: true }
   	validates :price, presence: true, numericality: { only_integer: true }
+  	
+  	has_many :offer_attachments
+   accepts_nested_attributes_for :offer_attachments
 end

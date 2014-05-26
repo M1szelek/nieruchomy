@@ -1,0 +1,31 @@
+<h1>Listing offer_attachments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Offer</th>
+      <th>Image</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @offer_attachments.each do |offer_attachment| %>
+      <tr>
+        <td><%= offer_attachment.offer_id %></td>
+        <td><%= offer_attachment.image %></td>
+        
+        
+        <td><%= link_to 'Show', offer_attachment %></td>
+        <td><%= link_to 'Edit', edit_offer_attachment_path(offer_attachment) %></td>
+        <td><%= link_to 'Destroy', offer_attachment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Offer attachment', new_offer_attachment_path %>

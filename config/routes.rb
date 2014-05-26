@@ -1,4 +1,6 @@
 Nieruchomy::Application.routes.draw do
+  resources :offer_attachments
+
   resources :offers
 
   get "users/new"

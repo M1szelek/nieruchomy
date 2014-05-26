@@ -18,7 +18,7 @@ class OffersController < ApplicationController
     @comments = @offer.comments
     
     @comment_add=Comment.new
-    
+    @offer_attachment = @offer.offer_attachments.all
     
     
   end
@@ -28,6 +28,7 @@ class OffersController < ApplicationController
   # GET /offers/new
   def new
     @offer = Offer.new
+    @offer_attachment = @offer.offer_attachments.build
   end
 
   # GET /offers/1/edit
@@ -38,7 +39,13 @@ class OffersController < ApplicationController
   # POST /offers.json
   def create
     @offer = current_user.offers.build(offer_params)
+    
+   
     if @offer.save
+      
+       params[:post_attachments]['image'].each do |a|
+      @offer_attachment = @offer.offer_attachments.create!(:image => a, :offer_id => @offer.id)
+      end
       flash[:success] = "Offer created!"
       redirect_to root_url
     else
@@ -84,3 +91,7 @@ class OffersController < ApplicationController
       redirect_to root_url if @offer.nil?
     end
 end
+private
+   def offer_params
+      params.require(:offer).permit( post_attachments_attributes: [:id, :offer_id, :image])
+   end
