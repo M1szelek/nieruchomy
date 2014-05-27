@@ -1,9 +1,14 @@
 <%= form_for(@offer, :html => { :multipart => true }) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
+  
   <div class="field">
     Tytuł<br>
     <%= f.text_field :title %>
   </div>
+  
+  
+  
+  
   <div class="field">
     Opis<br>
     <%= f.text_field :description %>
@@ -17,7 +22,7 @@
     <%= f.fields_for :post_attachments do |p| %>
      <div class="field">
       
-       <%= p.file_field :image , :multiple => true, name: "post_attachments[image][]"%>
+       <%= p.file_field :image , :multiple => true, name: "offer_attachments[image][]"%>
      </div>
    <% end %>
   </div>

@@ -39,13 +39,15 @@ class OffersController < ApplicationController
   # POST /offers.json
   def create
     @offer = current_user.offers.build(offer_params)
-    
+    @offer_attachment = OfferAttachment.new
    
     if @offer.save
       
-       params[:post_attachments]['image'].each do |a|
-      @offer_attachment = @offer.offer_attachments.create!(:image => a, :offer_id => @offer.id)
+      params[:offer_attachments]['image'].each do |a|
+        
+      @offer_attachment = @offer.offer_attachments.create!( :offer_id => @offer.id , :image => a )
       end
+      
       flash[:success] = "Offer created!"
       redirect_to root_url
     else
@@ -95,3 +97,7 @@ private
    def offer_params
       params.require(:offer).permit( post_attachments_attributes: [:id, :offer_id, :image])
    end
+     def offer_attachment_params
+      params.require(:offer_attachment).permit(:offer_id, :image)
+    end
+  
