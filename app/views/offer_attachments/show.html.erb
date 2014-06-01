@@ -1,16 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Offer:</strong>
-  <%= @offer_attachment.offer_id %>
-</p>
 
 <p>
-  <strong>Image:</strong>
-  <%= @offer_attachment.image %>
+  
   <%= image_tag @offer_attachment.image  %>
 </p>
 
 
-<%= link_to 'Edit', edit_offer_attachment_path(@offer_attachment) %> |
-<%= link_to 'Back', offer_attachments_path %>
+
