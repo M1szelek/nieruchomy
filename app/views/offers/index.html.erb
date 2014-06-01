@@ -22,7 +22,35 @@
        	<!--<%= offer.photo %> -->
        	</br>
        	
-       	<%= image_tag "home.jpg" %>
+       <% if @offer_attachments.empty? %>
+     <%= image_tag "home.jpg" %> 
+     <% end %>	
+       	
+<% @offer_attachments.each do |p| %>
+     
+  	
+  	
+  	<% if p.offer_id == offer.id  %>
+  <%= image_tag p.image %> 
+ <%  @count= 2%>
+    
+    <% end %>
+     
+     
+        
+  
+  	
+	<% end %> 
+	
+	
+	<% if @count== 1%>
+     <%= image_tag "home.jpg" %> 
+     <% end %>	
+	
+ <%  @count= 1%>
+
+
+ 
        	</br>
        </div>
         

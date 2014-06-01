@@ -8,7 +8,21 @@
        	<!--<%= @offer.photo %> -->
        	</br>
        	
-       	<%= image_tag "home.jpg" %>
+     <!--  	<%= image_tag "home.jpg" %> -->
+     <% if @offer_attachments.empty? %>
+     <%= image_tag "home.jpg" %> 
+     <% end %>
+     
+    <% @offer_attachments.each do |p| %>
+     
+  	
+  			<%= image_tag p.image %>
+  
+  	
+	<% end %> 
+    
+    
+    
        	</br>
        </div>
         
@@ -37,7 +51,7 @@
 		<%= @offer.street %>
 		<br />
 		<b>Uużytkownik</b>
-		<%= @offer.user_id %>
+		<%= @offer.user.name %>
 		<br />
 			</div>
         <div class="offerD">

@@ -8,6 +8,13 @@ class OffersController < ApplicationController
   # GET /offers.json
   def index
     @offers = Offer.all
+    @offer_attachments = OfferAttachment.all
+      
+    @offers = Offer.paginate(page: params[:page])
+    @count=1
+   
+   
+   
   end
 
 
@@ -16,15 +23,13 @@ class OffersController < ApplicationController
   def show
     @offer = Offer.find(params[:id])
     @comments = @offer.comments
-    
+    @offer_attachments =@offer.offer_attachments 
     @comment_add=Comment.new
-    @offer_attachment = @offer.offer_attachments.all
+    
     
     
   end
- def index
-    @offers = Offer.paginate(page: params[:page])
-  end
+
   # GET /offers/new
   def new
     @offer = Offer.new
