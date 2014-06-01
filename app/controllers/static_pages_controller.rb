@@ -3,6 +3,7 @@ class StaticPagesController < ApplicationController
   	if signed_in?
       @offer  = current_user.offers.build
       @feed_items = current_user.feed.paginate(page: params[:page])
+      @offer_attachments = OfferAttachment.all
     end
   end
 
