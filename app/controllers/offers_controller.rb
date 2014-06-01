@@ -51,6 +51,7 @@ class OffersController < ApplicationController
       params[:offer_attachments]['image'].each do |a|
         
       @offer_attachment = @offer.offer_attachments.create!( :offer_id => @offer.id , :image => a )
+      
       end
       
       flash[:success] = "Offer created!"
