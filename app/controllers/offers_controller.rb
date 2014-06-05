@@ -15,6 +15,7 @@ class OffersController < ApplicationController
 
 
     @offers = @search.results
+
     @offer_attachments = OfferAttachment.all
       
     #@offers = Offer.paginate(page: params[:page])

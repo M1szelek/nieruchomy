@@ -11,11 +11,16 @@
   
   <div class="field">
     Opis<br>
-    <%= f.text_field :description %>
+    <%= f.text_area :description %>
   </div>
   <div class="field">
     Rodzaj<br>
-    <%= f.text_field :typeM %>
+    <%= f.select :typeM, [['Kamienica','Kamienica'],
+                         ['Blok','Blok'],
+                         ['Dom wielorodzinny','Dom wielorodzinny'],
+                         ['Apartamentowiec','Apartamentowiec'],
+                         ['Wieżowiec','Wieżowiec'],
+                         ['Inne','Inne']]%>
   </div>
   <div class="field">
     Photo<br>
@@ -36,7 +41,23 @@
   </div>
   <div class="field">
     Województwo<br>
-    <%= f.text_field :state %>
+    <%= f.select :state, [['dolnośląskie','dolnośląskie'],
+                         ['kujawsko-pomorskie','kujawsko-pomorskie'],
+                         ['lubelskie','lubelskie'],
+                         ['lubuskie','lubuskie'],
+                         ['łódzkie','łódzkie'],
+                         ['małopolskie','małopolskie'],
+                         ['mazowieckie','mazowieckie'],
+                         ['opolskie','opolskie'],
+                         ['podkarpackie','podkarpackie'],
+                         ['podlaskie','podlaskie'],
+                         ['pomorskie','pomorskie'],
+                         ['śląskie','śląskie'],
+                         ['świętokrzyskie','świętokrzyskie'],
+                         ['warmińsko-mazurskie','warmińsko-mazurskie'],
+                         ['wielkopolskie','wielkopolskie'],
+                         ['zachodniopomorskie','zachodniopomorskie']] %>
+
   </div>
   <div class="field">
     Metraż<br>
