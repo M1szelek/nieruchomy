@@ -1,7 +1,36 @@
 <p id="notice"><%= notice %></p>
 
+
+  <div class="photogallery">
+	    	 	</br>  	
+	    	 	Galeria :
+       	</br>
+       		</br>
+       			
+     <!--  	<%= image_tag "home.jpg" %> -->
+     <% if @offer_attachments.empty? %>
+     <%= image_tag "home.jpg" %> 
+     <% end %>
+     
+   
+	
+	<%= div_for(@offer_attachments, class: "imageContainer") do |p| %>
+	<%=link_to image_tag(p.image),p %>
+ 
+<% end %>
+    
+    
+    
+       	</br> 	
+	
+	</div>
+
 <div class="offer">
-       <div class="offertitle"><br /> <%= @offer.title %><br /> </div>
+	    	
+       <div class="offertitle">
+       	<br /> <%= @offer.title %><br /> 
+       	
+       	</div>
       
        
        <div class="offerphoto">
@@ -18,13 +47,16 @@
   	
   			<%=link_to image_tag(p.image),p %>
   			
-  	
+  			
+  	<% break %> 
 	<% end %> 
+	
     
     
     
        	</br>
        </div>
+       
         
         <div class="offerdetails">
         	
@@ -53,13 +85,17 @@
 		<b>Uużytkownik</b>
 		<%= @offer.user.name %>
 		<br />
+		
+	
 			</div>
         <div class="offerD">
         	<b>Opis:</b>
         	<br />
         	  <%= @offer.description %>
         </div>
+    
         
+      
      
          </div>
         <b>Komentarze:</b> </br>
@@ -104,9 +140,12 @@
      <%= f.submit "Dodaj komantarz", class: "btn btn-small btn-primary" %>
   	 <% end %>
   	
-  </div>
+
   	
-</div>
-</div>
 
 
+
+
+</div>
+</div>
+</div>

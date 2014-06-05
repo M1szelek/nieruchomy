@@ -17,22 +17,52 @@
     
     background-color: #EEEEEE;
     border-radius: 6px;
-    clear: both;
-    display: block;
+    
+    
     margin: 10px;
-    width: 800px;
+    width: 715px;
+    height: auto;
+    
+}
+
+.photogallery {
+    background: none repeat scroll 0 0 #EEEEEE;
+      border-radius: 6px;
+    
+    font-family: Impact;
+    font-size: 30px;
+    text-align:center;
+    
+    height: auto;
+    width: 200px;
+    
+    border-style: solid;
+    border-width: 2px;
+    float:right;
+    
+   
+}
+
+.imageContainer  img {
+   height: 150px;
+    width: 90%;
+    border-radius: 6px;
+    border-style: solid;
+    border-width: 4px;
+    margin: 0 0 10px 0;
+
 }
 .offerD {
+  
    
-    clear: both;
-    display: block;
     margin: 0 0 0 10px;
-    width: 780px;
+    width: auto;
 }
 .offertitle {
     font-size: 30px;
     list-style-position: outside;
     margin: 0 0 0 10px;
+  
 }
 .offercontent {
     font-size: 10px;
@@ -51,7 +81,10 @@
     height: 200px;
     margin: 0 0 0 350px;
     width: 250px;
+   
 }
+
+
 
 .timecomment {
   background-color: #EEEEEE;

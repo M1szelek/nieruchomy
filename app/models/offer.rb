@@ -12,9 +12,9 @@ class Offer < ActiveRecord::Base
   	has_many :offer_attachments
    accepts_nested_attributes_for :offer_attachments
 
-   searchable do
-    text :title, :city, :state, :street, :typeM, :description
-    time :created_at
+   #searchable do
+   # text :title, :city, :state, :street, :typeM, :description
+    #time :created_at
      
-   end
+   #end
 end
