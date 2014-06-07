@@ -13,4 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
+//= require fancybox
+
+$(document).ready(function() {
+  $("a.fancybox").fancybox({'type': 'iframe'});
+});
 

@@ -7,11 +7,11 @@ class OffersController < ApplicationController
   # GET /offers
   # GET /offers.json
   def index
-   # @search = Offer.search do
-    #  fulltext params[:search]
-   #   order_by :created_at, :desc
-     # paginate(:page => params[:page] || 1, :per_page => 15)
-   # end
+    @search = Offer.search do
+      fulltext params[:search]
+      order_by :created_at, :desc
+      paginate(:page => params[:page] || 1, :per_page => 15)
+    end
 
 
 
@@ -23,7 +23,7 @@ class OffersController < ApplicationController
 
     @offer_attachments = OfferAttachment.all
       
-    @offers = Offer.paginate(page: params[:page])
+    #@offers = Offer.paginate(page: params[:page])
     @count=1
    
    

@@ -57,3 +57,4 @@ gem 'sunspot_solr'
 
 gem 'rmagick'
 
+gem 'fancybox2-rails'
